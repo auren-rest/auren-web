@@ -6,5 +6,5 @@ import { AUREN_URL } from "@/lib/config";
  * noindex, so they are intentionally omitted until real content ships.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [{ url: AUREN_URL, changeFrequency: "monthly", priority: 1 }];
+  return [{ url: AUREN_URL, lastModified: new Date(), changeFrequency: "monthly", priority: 1 }];
 }
