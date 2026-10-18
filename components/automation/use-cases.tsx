@@ -42,11 +42,11 @@ export function UseCases() {
         ))}
       </ul>
 
-      {/* How n8n sits between software and the physical world */}
+      {/* How the workflow layer sits between software and the physical world */}
       <div className="mt-16 grid items-stretch gap-4 lg:grid-cols-[1fr_auto_1fr_auto_1fr]">
         {[
           ["Connected software", "Online store · payment provider · inventory database · CRM · email · AI models"],
-          ["n8n coordinates", "Triggers, branching, retries and data mapping between every step of the workflow"],
+          ["Automation coordinates", "Triggers, branching, retries and data mapping between every step of the workflow"],
           ["Actions happen", "External services send, update and notify. Compatible hardware can act only through its own controller and safety systems."],
         ].flatMap(([t, b], i, arr) => [
           <div key={t} className={`rounded-xl border p-6 ${i === 1 ? "border-white bg-charcoal" : "border-line bg-panel"}`}>
@@ -86,7 +86,7 @@ notify    queued`}
           </pre>
         </div>
         <figcaption className="border-t border-line px-4 py-2.5 text-xs text-gray-400">
-          A mock-up for illustration. It is not a screenshot of a running n8n instance.
+          A mock-up for illustration. It is not a screenshot of a live production system.
         </figcaption>
       </figure>
     </>

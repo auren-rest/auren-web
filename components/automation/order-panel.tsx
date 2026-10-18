@@ -32,7 +32,7 @@ export function OrderPanel({ segs, seg, scenario, playing }: Props) {
   return (
     <div className="flex h-full flex-col gap-4 rounded-xl border border-line bg-panel p-4 font-mono text-[0.6875rem] uppercase tracking-[0.1em] md:p-5">
       <div className="flex items-center justify-between gap-2 text-gray-400">
-        <span>n8n workflow · simulated</span>
+        <span>Automation workflow · simulated</span>
         <span className="flex items-center gap-1.5">
           <span aria-hidden="true" className={cx("size-1.5 rounded-full", playing ? "bg-white" : "bg-gray-400")} />
           {playing ? "Running" : "Idle"}

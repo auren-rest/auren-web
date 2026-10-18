@@ -10,8 +10,8 @@
 
 ## Automation redesign (GEO)
 
-- Title/description/OG image describe the n8n workflow-automation focus; the brand title in `app/page.tsx` uses `TAGLINE` from `lib/seo.ts`.
-- Home `WebPage` JSON-LD adds `about` (n8n workflow automation) and `mentions` Zent as a `SoftwareApplication`; `Organization` gains `knowsAbout`. No offers, ratings or "live" claims are marked up.
+- Title/description/OG image describe the workflow-automation focus; the brand title in `app/page.tsx` uses `TAGLINE` from `lib/seo.ts`.
+- Home `WebPage` JSON-LD adds `about` (workflow automation) and `mentions` Zent as a `SoftwareApplication`; `Organization` gains `knowsAbout`. No offers, ratings or "live" claims are marked up.
 - The FAQ explicitly states the robot demo and workflows are simulated, so answer engines don't cite them as real integrations.
 - `public/llms.txt` summarises pages, key facts and the simulated-demo disclaimer.
 - Server-rendered text for the hero, use cases and explorer headings is crawlable; the 3D canvas is `aria-hidden` and decorative.

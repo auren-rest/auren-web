@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState, type MutableRefObject } from 
 
 /**
  * Simulated order-fulfilment run. Everything here is a demonstration: no real
- * order, payment, inventory record, n8n execution or robot is involved.
+ * order, payment, inventory record, live workflow execution or robot is involved.
  */
 /** Robot playback speed multiplier (1 = original). */
 export const ROBOT_SPEED = 1.4;
@@ -22,7 +22,7 @@ export const STEPS: Array<{
   role: string;
   thinking: string;
 }> = [
-  { id: "order", label: "New Order", node: "Webhook trigger", role: "An online store sends the new order to an n8n webhook. This is what starts the workflow.", thinking: "Receiving order payload..." },
+  { id: "order", label: "New Order", node: "Webhook trigger", role: "An online store sends the new order to an automation webhook. This is what starts the workflow.", thinking: "Receiving order payload..." },
   { id: "validate", label: "Validate Order", node: "Order validation", role: "Checks required fields, quantities, addresses and SKUs. Malformed orders stop here.", thinking: "Validating order details..." },
   { id: "payment", label: "Verify Payment", node: "Payment service", role: "Asks the payment provider for the order's payment status. A failed or pending payment stops the workflow.", thinking: "Confirming payment status..." },
   { id: "inventory", label: "Check Inventory", node: "Inventory database", role: "Reads stock levels for each SKU. If an item is out of stock the order is diverted instead of fulfilled.", thinking: "Checking inventory..." },

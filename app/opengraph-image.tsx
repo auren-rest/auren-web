@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Auren — n8n workflow automation and reliable software.";
+export const alt = "Auren — workflow automation and reliable software.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

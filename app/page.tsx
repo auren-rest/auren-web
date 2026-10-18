@@ -50,12 +50,12 @@ const faqs = [
     a: "The capabilities listed on this page describe Zent’s intended scope. Individual capabilities are labelled as their availability is confirmed. Visit the Zent website for current status.",
   },
   {
-    q: "What does n8n do?",
-    a: "n8n is a workflow-automation tool. It connects apps, APIs and AI models so routine tasks such as emails, reports, notifications and data syncing can run automatically.",
+    q: "What is workflow automation?",
+    a: "Workflow automation connects apps, APIs and AI models so routine tasks such as emails, reports, notifications and data syncing can run automatically.",
   },
   {
     q: "Is the robot demo on this page real?",
-    a: "No. The robotic fulfilment cell is a 3D simulation of an automated order-processing workflow (new order, validation, payment check, inventory check, approval, pick and place, order update, confirmation). No real order, payment, stock record, n8n instance or robot hardware is connected.",
+    a: "No. The robotic fulfilment cell is a 3D simulation of an automated order-processing workflow (new order, validation, payment check, inventory check, approval, pick and place, order update, confirmation). No real order, payment, stock record, live workflow engine or robot hardware is connected.",
   },
   {
     q: "What happens when an order fails a check?",
@@ -77,7 +77,7 @@ const webPageLd = {
   isPartOf: { "@id": WEBSITE_ID },
   about: [
     { "@id": ORG_ID },
-    { "@type": "Thing", name: "n8n workflow automation", description: "Connecting applications, APIs, AI models and databases to automate repetitive business tasks such as order processing, notifications and reporting." },
+    { "@type": "Thing", name: "Workflow automation", description: "Connecting applications, APIs, AI models and databases to automate repetitive business tasks such as order processing, notifications and reporting." },
   ],
   mentions: [
     {
@@ -130,7 +130,7 @@ export default function Home() {
           <div className="grid items-end gap-8 lg:grid-cols-12">
             <div className="lg:col-span-8">
               <Reveal>
-                <Eyebrow>n8n workflow automation · simulated demonstration</Eyebrow>
+                <Eyebrow>Workflow automation · simulated demonstration</Eyebrow>
               </Reveal>
               <Reveal delay={0.08}>
                 <h1
@@ -182,7 +182,7 @@ export default function Home() {
       </section>
 
       {/* Automations */}
-      <Section id="automations" index="01" label="Automation with n8n" tone="dark" labelledBy="automations-title">
+      <Section id="automations" index="01" label="Intelligent automation" tone="dark" labelledBy="automations-title">
         <div className="grid gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-8">
             <h2 id="automations-title" className="text-4xl font-medium leading-[1] tracking-display md:text-6xl">
@@ -191,7 +191,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.1} className="lg:col-span-4">
             <p className="text-lg leading-relaxed text-gray-300">
-              n8n connects applications, APIs, AI models, databases and
+              Automated workflows connect applications, APIs, AI models, databases and
               business processes, so repetitive work runs on its own and
               people focus on what needs judgement.
             </p>
@@ -347,7 +347,7 @@ export default function Home() {
                   </h2>
                   <p className="mt-4 max-w-2xl leading-relaxed text-gray-300">
                     Zent watches your servers and services. Automation tools like
-                    n8n can act on signals such as alerts and incidents, so the
+                    Automated workflows can act on signals such as alerts and incidents, so the
                     systems that run your workflows stay visible and dependable.
                   </p>
                 </div>
