@@ -6,6 +6,18 @@ import * as THREE from "three";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { ROBOT_SPEED, type Live } from "./sim";
 
+/**
+ * @react-three/fiber 9.x still constructs THREE.Clock internally, which three
+ * now warns about. Drop only that one known message until fiber updates.
+ */
+if (typeof window !== "undefined") {
+  const w = console.warn;
+  console.warn = (...args: unknown[]) => {
+    if (typeof args[0] === "string" && args[0].includes("THREE.Clock: This module has been deprecated")) return;
+    w(...args);
+  };
+}
+
 /* ---------- geometry constants (scene units ≈ metres) ---------- */
 const L1 = 1.7; // upper arm
 const L2 = 1.5; // forearm

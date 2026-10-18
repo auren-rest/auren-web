@@ -129,20 +129,20 @@ export default function Home() {
         <Container className="pb-16 pt-10 md:pb-24 md:pt-14">
           <div className="grid items-end gap-8 lg:grid-cols-12">
             <div className="lg:col-span-8">
-              <Reveal>
+              <div>
                 <Eyebrow>Workflow automation · simulated demonstration</Eyebrow>
-              </Reveal>
-              <Reveal delay={0.08}>
+              </div>
+              <div>
                 <h1
                   id="hero-title"
                   className="mt-5 text-[clamp(2.5rem,6.4vw,5.5rem)] font-medium leading-[0.96] tracking-display"
                 >
                   From Order to Execution. Automatically.
                 </h1>
-              </Reveal>
+              </div>
             </div>
             <div className="lg:col-span-4">
-              <Reveal delay={0.16}>
+              <div>
                 <p className="leading-relaxed text-gray-300">
                   Watch connected workflows validate orders, coordinate systems,
                   and drive automated fulfillment through intelligent process
@@ -156,12 +156,12 @@ export default function Home() {
                     View Zent
                   </ButtonLink>
                 </div>
-              </Reveal>
+              </div>
             </div>
           </div>
-          <Reveal delay={0.24} className="mt-10">
+          <div className="mt-10">
             <HeroCell />
-          </Reveal>
+          </div>
         </Container>
         <div className="border-t border-line">
           <Container className="grid divide-line text-sm md:grid-cols-3 md:divide-x">

@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import { OrderPanel } from "./order-panel";
 import { useSimulation } from "./sim";
 import { useCapabilities } from "./use-can3d";
@@ -25,15 +26,32 @@ function Schematic({ working }: { working: boolean }) {
   );
 }
 
+/** True once the page has painted and the browser is idle, so three.js never competes with LCP. */
+function useIdle() {
+  const [idle, setIdle] = useState(false);
+  useEffect(() => {
+    const go = () => {
+      const w = window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number };
+      if (w.requestIdleCallback) w.requestIdleCallback(() => setIdle(true), { timeout: 2000 });
+      else setTimeout(() => setIdle(true), 800);
+    };
+    if (document.readyState === "complete") go();
+    else window.addEventListener("load", go, { once: true });
+    return () => window.removeEventListener("load", go);
+  }, []);
+  return idle;
+}
+
 export function HeroCell() {
   const { can3D } = useCapabilities();
+  const idle = useIdle();
   const sim = useSimulation({ auto: true });
   const working = sim.cur.id === "robot";
   return (
     <div className="grid gap-4 lg:grid-cols-12">
       <div className="relative overflow-hidden rounded-xl border border-line bg-ink lg:col-span-8">
         <div className="aspect-[4/3] w-full sm:aspect-[16/10] lg:aspect-auto lg:h-[560px]">
-          {can3D ? <RobotCell live={sim.live} /> : <Schematic working={working} />}
+          {can3D && idle ? <RobotCell live={sim.live} /> : <Schematic working={working} />}
         </div>
         <div className="pointer-events-none absolute left-3 top-3 rounded-md border border-line bg-ink/80 px-2.5 py-1.5 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-gray-300 backdrop-blur">
           Simulated fulfilment cell · not live
