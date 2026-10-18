@@ -5,7 +5,7 @@ import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { ButtonLink, Container, SmartLink, cx } from "./primitives";
 
 export type NavLink = { label: string; href: string };
-export type NavAction = NavLink & { variant?: "primary" | "secondary" };
+export type NavAction = NavLink & { variant?: "primary" | "secondary" | "glow" };
 
 /**
  * Responsive site header: brand left, navigation centre, actions right.
@@ -46,13 +46,13 @@ export function SiteHeader({
   }, [open]);
 
   const linkClass =
-    "relative py-1 text-sm text-gray-600 transition-colors duration-300 hover:text-black after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-black after:transition-transform after:duration-300 hover:after:scale-x-100";
+    "relative py-1 text-sm text-gray-300 transition-colors duration-300 hover:text-white after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/90 backdrop-blur-md">
+    <header data-tone="inverted" className="sticky top-0 z-50 border-b border-line bg-ink/80 text-white backdrop-blur-xl">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-black focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:text-ink"
       >
         Skip to content
       </a>
@@ -84,7 +84,7 @@ export function SiteHeader({
           <button
             ref={buttonRef}
             type="button"
-            className="inline-flex size-10 items-center justify-center border border-gray-200 lg:hidden"
+            className="inline-flex size-10 items-center justify-center border border-line lg:hidden"
             aria-expanded={open}
             aria-controls={menuId}
             aria-label={open ? "Close menu" : "Open menu"}
@@ -98,7 +98,7 @@ export function SiteHeader({
       <div
         id={menuId}
         hidden={!open}
-        className={cx("border-t border-gray-200 bg-white lg:hidden")}
+        className={cx("border-t border-line bg-ink lg:hidden")}
       >
         <Container className="flex flex-col gap-1 py-4">
           <nav aria-label={`${navLabel} (mobile)`} className="flex flex-col">
@@ -107,7 +107,7 @@ export function SiteHeader({
                 key={l.label}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-gray-200 py-4 text-lg tracking-[-0.02em]"
+                className="border-b border-line py-4 text-lg tracking-[-0.02em]"
               >
                 {l.label}
               </SmartLink>

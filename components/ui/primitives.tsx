@@ -63,7 +63,7 @@ export function Eyebrow({
   );
 }
 
-type Variant = "primary" | "secondary";
+type Variant = "primary" | "secondary" | "glow";
 
 const base =
   "group inline-flex h-12 whitespace-nowrap items-center justify-center gap-2 border px-6 text-sm font-medium tracking-[-0.01em] transition-colors duration-300 ease-out-quart";
@@ -72,7 +72,9 @@ const variants: Record<Variant, string> = {
   primary:
     "border-black bg-black text-white hover:bg-white hover:text-black inverted:border-white inverted:bg-white inverted:text-black inverted:hover:bg-black inverted:hover:text-white",
   secondary:
-    "border-black bg-transparent text-black hover:bg-black hover:text-white inverted:border-white inverted:text-white inverted:hover:bg-white inverted:hover:text-black",
+    "border-black bg-transparent text-black hover:bg-black hover:text-white inverted:border-line inverted:bg-transparent inverted:text-white inverted:backdrop-blur inverted:hover:border-white inverted:hover:bg-white/10",
+  glow:
+    "border-white bg-white text-ink hover:bg-ink hover:text-white",
 };
 
 export function ButtonLink({
@@ -138,7 +140,7 @@ export function Section({
   index?: string;
   label?: string;
   children: ReactNode;
-  tone?: "light" | "inverted";
+  tone?: "light" | "inverted" | "dark";
   className?: string;
   labelledBy?: string;
 }) {
@@ -146,12 +148,12 @@ export function Section({
     <section
       id={id}
       aria-labelledby={labelledBy}
-      data-tone={tone === "inverted" ? "inverted" : undefined}
+      data-tone={tone !== "light" ? "inverted" : undefined}
       className={cx(
-        "border-t",
-        tone === "inverted"
-          ? "border-gray-800 bg-black text-white"
-          : "border-gray-200 bg-white text-black",
+        "relative border-t",
+        tone === "inverted" && "border-gray-800 bg-black text-white",
+        tone === "dark" && "border-line bg-ink text-white",
+        tone === "light" && "border-gray-200 bg-white text-black",
         className,
       )}
     >

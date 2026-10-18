@@ -1,14 +1,21 @@
 # Auren
 
-> Auren is an independent software company building reliable products for developers and modern digital businesses.
+> Auren is an independent software company. Its site explains how n8n workflow automation connects applications, APIs and AI models to automate routine business work, and presents Zent, Auren's server-monitoring product.
 
 ## Pages
 
-- [Auren home](https://auren.rest/): Company overview, philosophy, and products.
+- [Auren home](https://auren.rest/): n8n workflow-automation use cases, an interactive simulated order-fulfilment workflow, company overview and products.
+- [Workflow explorer](https://auren.rest/#explorer): Step-by-step simulated order workflow (webhook, validation, payment, inventory, decision, robot simulation, update, confirmation) with failure branches.
 
 ## Products
 
-- [Zent](https://zent.auren.rest): Server monitoring by Auren. Capabilities on auren.rest describe intended scope; availability is labelled individually.
+- [Zent](https://zent.auren.rest/): Server monitoring by Auren. Capabilities on auren.rest describe intended scope; availability is labelled individually.
+
+## Key facts
+
+- n8n is a workflow-automation tool that connects apps, APIs, AI models and databases.
+- The robotic fulfilment cell and order workflow on auren.rest are simulations. No real orders, payments, inventory updates, n8n instances or robot hardware are connected.
+- Use cases covered: e-commerce order processing, inventory synchronisation, invoice generation, customer notifications, daily reports, lead follow-up, AI document processing, scheduled data collection.
 
 ## Contact
 

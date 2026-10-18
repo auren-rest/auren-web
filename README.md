@@ -13,7 +13,7 @@ app/            routes (/, /privacy, /terms), metadata, sitemap, robots, OG imag
 app/theme.css   design tokens (black / white / neutral grays only)
 components/     Auren page components (header/footer, hero art, mini dashboard)
 components/ui/  reusable primitives (logos, buttons, header, footer, charts, motion)
-lib/config.ts   site URLs and contact email from env
+lib/config.ts   site URLs and contact addresses
 ```
 
 ## Run

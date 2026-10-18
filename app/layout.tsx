@@ -24,8 +24,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
-  colorScheme: "light",
+  themeColor: "#05070d",
+  colorScheme: "dark",
 };
 
 const jsonLd = {
@@ -36,7 +36,7 @@ const jsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="min-h-screen bg-white text-black antialiased">
+      <body className="min-h-screen bg-ink text-white antialiased">
         <Header />
         {children}
         <Footer />

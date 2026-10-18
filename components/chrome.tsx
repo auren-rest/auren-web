@@ -16,14 +16,15 @@ export function Header() {
         </SmartLink>
       }
       links={[
-        { label: "About", href: "/#about" },
+        { label: "Use cases", href: "/#automations" },
+        { label: "Workflow explorer", href: "/#explorer" },
         { label: "Products", href: "/#products" },
         { label: "Philosophy", href: "/#philosophy" },
         { label: "Contact", href: "/#contact" },
       ]}
       actions={[
-        { label: "Visit Zent", href: ZENT_URL, variant: "secondary" },
-        { label: "Get started", href: `${ZENT_URL}/get-started`, variant: "primary" },
+        { label: "Zent — Explore the Platform", href: ZENT_URL, variant: "secondary" },
+        { label: "Explore the workflow", href: "/#explorer", variant: "glow" },
       ]}
     />
   );

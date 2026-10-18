@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { AUREN_URL } from "@/lib/config";
 
 export const SITE_NAME = "Auren";
-export const TAGLINE = "We build software that keeps things running.";
+export const TAGLINE = "n8n workflow automation and reliable software.";
 export const SITE_DESCRIPTION =
-  "Auren is an independent software company building reliable products for developers and modern digital businesses. Home of Zent, a server-monitoring product.";
+  "Auren is an independent software company. Explore how n8n workflow automation connects apps, APIs and AI to automate order processing, reporting and notifications, and discover Zent, our server-monitoring product.";
 
 /** Stable entity identifiers shared across JSON-LD nodes. */
 export const ORG_ID = `${AUREN_URL}/#organization`;
@@ -43,6 +43,7 @@ export const organizationNode = {
   url: AUREN_URL,
   description: SITE_DESCRIPTION,
   email: "hello@auren.rest",
+  knowsAbout: ["n8n workflow automation", "business process automation", "AI-powered workflows", "API integration", "server monitoring"],
 };
 
 export const websiteNode = {
