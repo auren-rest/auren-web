@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { AUREN_URL } from "@/lib/config";
+import { AUREN_URL, CONTACT_EMAIL } from "@/lib/config";
 
 export const SITE_NAME = "Auren";
 export const TAGLINE = "Workflow automation and reliable software.";
 export const SITE_DESCRIPTION =
   "Auren is an independent software company. Explore how workflow automation connects apps, APIs and AI to automate order processing, reporting and notifications, and discover Zent, our server-monitoring product.";
+
+/** Last date page content meaningfully changed; drives sitemap `lastModified`. */
+export const CONTENT_UPDATED = "2026-10-19";
 
 /** Stable entity identifiers shared across JSON-LD nodes. */
 export const ORG_ID = `${AUREN_URL}/#organization`;
@@ -42,7 +45,8 @@ export const organizationNode = {
   name: SITE_NAME,
   url: AUREN_URL,
   description: SITE_DESCRIPTION,
-  email: "hello@auren.rest",
+  email: CONTACT_EMAIL,
+  logo: { "@type": "ImageObject", url: `${AUREN_URL}/icon.svg` },
   knowsAbout: ["workflow automation", "business process automation", "AI-powered workflows", "API integration", "server monitoring"],
 };
 

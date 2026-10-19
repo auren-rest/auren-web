@@ -1,6 +1,7 @@
 # SEO / GEO notes
 
-- Canonical host: `https://auren.rest` (apex, no trailing slash). `www` 308-redirects to it (`next.config.ts`); also add the redirect in Vercel Domains.
+- Canonical host: `https://www.auren.rest` (set by `AUREN_URL` in `lib/config.ts`). In Vercel Domains, `www.auren.rest` is the primary domain and the apex `auren.rest` 308-redirects to it. Keep the two in sync: canonicals, sitemap, robots, OG URLs and JSON-LD `@id`s all derive from `AUREN_URL`.
+- Sitemap `lastModified` is the fixed `CONTENT_UPDATED` date in `lib/seo.ts`. Bump it only when page content meaningfully changes; do not use `new Date()`.
 - Per-page metadata: `pageMetadata()` in `lib/seo.ts`. The root layout sets no canonical or robots, so every page declares its own.
 - `/privacy` and `/terms` are placeholders: `noindex, follow`, omitted from `app/sitemap.ts`. When real content ships, pass `index: true` and add them to the sitemap.
 - JSON-LD: site-wide `Organization` + `WebSite` (stable `@id`s) in the layout; `WebPage` on home; `BreadcrumbList` on legal pages. No ratings, reviews, addresses or Zent offers are marked up because none are shown on the site.

@@ -1,6 +1,6 @@
 # Auren web
 
-The company website for **Auren** (`https://auren.rest`). A single Next.js (App Router) app.
+The company website for **Auren** (`https://www.auren.rest`). A single Next.js (App Router) app.
 
 Zent, Auren's server-monitoring product, lives in its own repository and site (`https://zent.auren.rest`). This repo only links to it.
 
@@ -30,9 +30,9 @@ npm run build && npm start
 
 | Variable | Purpose | Default |
 | --- | --- | --- |
-| `NEXT_PUBLIC_AUREN_URL` | This site's origin (metadata, sitemap) | `https://auren.rest` |
+| `NEXT_PUBLIC_AUREN_URL` | This site's origin (metadata, sitemap) | `https://www.auren.rest` |
 | `NEXT_PUBLIC_ZENT_URL` | Where "Visit Zent" / "Explore Zent" go | `https://zent.auren.rest` |
-| `NEXT_PUBLIC_CONTACT_EMAIL` | Contact address (placeholder, replace) | `hello@auren.rest` |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Contact address (placeholder, replace) | `auren.rest@gmail.com` |
 
 ## Design system
 
